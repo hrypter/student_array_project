@@ -5,7 +5,6 @@ RUN apt-get update && \
 WORKDIR /app
 COPY . .
 RUN ./mvnw bootjar --no-daemon
-
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/WebMvcApp05Application.jar /app/WebMvcApp07ApplicationTests.jar
