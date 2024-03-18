@@ -1,5 +1,5 @@
 # Build stage
-FROM ubuntu:latest AS build
+FROM maven:latest AS build
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk && \
     apt-get install -y maven
@@ -10,6 +10,6 @@ RUN mvn clean package
 # Run stage
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/src/test/java/in/suman/WebMvcApp07ApplicationTests.jar /app/WebMvcApp07ApplicationTests.jar
+COPY --from=build /app/target/WebMVC-App07-0.0.1-SNAPSHOT.jar WebMvc-AppO7.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "WebMvcApp07ApplicationTests.jar"]
+ENTRYPOINT ["java", "-jar", " WebMvc-AppO7.jar"]
