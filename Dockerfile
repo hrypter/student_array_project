@@ -10,6 +10,6 @@ RUN mvn clean package
 # Run stage
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/suman/src/main/java/in/suman/WebMVCApp07Application.java WebMvc-AppO7.java
+COPY --from=build /app/suman/src/main/java/in/suman/WebMVCApp07Application.java WebMvcAppO7Application.java
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "WebMvc-AppO7.jar"]
+ENTRYPOINT ["java", "-jar", "WebMvcAppO7Application.jar"]
