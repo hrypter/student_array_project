@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get clean
 WORKDIR /app
 COPY . .
-RUN mvn clean package
+RUN maven clean package
 
 # Run stage
 FROM openjdk:17-jdk-slim
