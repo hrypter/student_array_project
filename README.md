@@ -1,1 +1,1 @@
-"# suman-project"
+"# suman"
