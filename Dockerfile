@@ -17,8 +17,8 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the compiled application from the build stage
-COPY --from=build /app/suman/src/main/java/in/suman/WebMVCApp07Application.java WebMvcAppO7Application.java
-COPY --from=build /app/target/WebMvc-App07-0.0.1-SNAPSHOT.jar WebMv-cApp07-0.0.1-SNAPSHOT.jar
+COPY --from=build /app/src/main/java/in/suman/WebMVCApp07Application.java WebMvcAppO7Application.java
+COPY --from=build /app/in.suman/WebMvc-App07-0.0.1-SNAPSHOT.jar WebMvc-App07-0.0.1-SNAPSHOT.jar
 
 # Expose port 8080
 EXPOSE 8080
