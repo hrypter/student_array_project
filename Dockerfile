@@ -4,7 +4,8 @@ RUN apt-get update && \
     apt-get install -y maven
 WORKDIR /app
 COPY . .
-RUN ./mvnw bootjar --no-daemon
+RUN mvn clean package
+
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/WebMvcApp05Application.jar /app/WebMvcApp07ApplicationTests.jar
