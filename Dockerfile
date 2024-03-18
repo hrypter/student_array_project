@@ -8,6 +8,6 @@ RUN mvn clean package
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /suman/src/main/test/java/in/suman/WebMvcApp07ApplicationTests.jar /app/WebMvcApp07ApplicationTests.jar
+COPY --from=build /app/src/main/test/java/in/suman/WebMvcApp07ApplicationTests.java /app/WebMvcApp07ApplicationTests.java
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "WebMvcApp07ApplicationTests.jar"]
+ENTRYPOINT ["javac", "WebMvcApp07ApplicationTests.java"]
