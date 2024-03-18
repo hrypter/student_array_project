@@ -8,6 +8,6 @@ RUN mvn clean package
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/WebMvcApp05Application.jar /app/WebMvcApp07ApplicationTests.jar
+COPY --from=build /app/target/WebMvcApp07ApplicationTests.jar /app/WebMvcApp07ApplicationTests.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "WebMvcApp07ApplicationTests.jar"]
