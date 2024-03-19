@@ -17,10 +17,10 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the compiled application from the build stage
-COPY --from=build /app/target/WebMVC-App07-0.0.1-SNAPSHOT.jar ./
+COPY --from=build /app/target/WebMVC-App07-0.0.1-SNAPSHOT.war ./
 
 # Expose port 8080
 EXPOSE 8080
 
 # Define the entry point to run the application
-ENTRYPOINT ["java", "-jar", "WebMVC-App07-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "WebMVC-App07-0.0.1-SNAPSHOT.war"]
