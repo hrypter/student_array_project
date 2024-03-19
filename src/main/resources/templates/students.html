@@ -13,7 +13,7 @@
 </head>
 
                        <!--Horizontal upper Navbar start -->
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
     <div class="container-fluid position-relative">    
         <a class="navbar-brand text-success" href="https://www.youtube.com/">
             <img src="studentlogo.jpg" alt="Logo" style="width:40px;" class="rounded-pill">
@@ -42,7 +42,8 @@
           </ul>
         </li>
       </ul>   
-      </div>           
+      </div>   
+      </div>        
     <div class="d-flex justify-content-center align-items-center">
             <button class="btn btn-primary badge rounded-pill" type="button">Registration</button>
             <button class="btn btn-danger badge rounded-pill" type="button">Login</button>
@@ -64,12 +65,12 @@
 
 <br><br>
 
-<!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
     </div>
     
-</nav> -->
+</nav>
 
 <!--  <br><br> -->
 <!--   
@@ -256,7 +257,6 @@
    
   <!-- last card and navlinks start here -->
    <div class="card img-fluid bg-dark mt-3" style="border-radius: 0;">
-    <img class="card-img-top" src="space.png" alt="Card image" style="width:100%">
     <div class="card-img-overlay d-flex justify-content-between">
                 <div class="vertical-links">
             <h2 class="text-light">Learn core:</h2>
@@ -305,9 +305,8 @@
                 </li>
             </ul>
         </div>
-
                 <div class="vertical-links">
-            <h2 class="text-light">Frontent:</h2>
+            <h2 class="text-light">Frontend:</h2>
             <ul class="nav flex-column">
                 <li class="nav-item ">
                     <a class="nav-link text-warning fw-bold fs-6" href="https://www.w3schools.com/html/default.asp">Learn HTML</a>
@@ -397,21 +396,21 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2  class="text-secondary">Welcome:</h2>
+                    <h2  class="text-light">Welcome:</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
                 <div class="modal-body">
                     <form id="studentForm">
-                        <div class="bg-info p-3" >
+                        <div class="bg-dark  p-3" >
                             <label for="FirstName">First Name:</label>
                             <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name" name="firstName"/><br/>
                         </div>
-                        <div class="bg-primary p-3">
+                        <div class="bg-dark p-3">
                             <label for="LastName">Last Name:</label>
                             <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name" name="lastName"/><br/>
                         </div>
-                        <div class="bg-secondary p-3">
+                        <div class="bg-dark p-3">
                             <label for="Email">Email:</label>
                             <input type="email" class="form-control" id="Email" placeholder="Enter email" name="email"/><br/>
                         </div>
