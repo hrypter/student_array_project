@@ -365,11 +365,11 @@
 
 
                           <!-- last card and navlinks end here -->
- 
-                                  <!-- Modal start here  -->
+
+                                 <!-- Modal start here  -->
 
      <!-- The Modal -->
-    <div class="modal" id="myModal">
+     <div class="modal" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -379,24 +379,35 @@
 
                 <div class="modal-body">
                     <form id="studentForm">
-                        <div class="bg-dark  p-3" >
+                        <div class="bg-dark  p-3 was-validated">
                             <label for="FirstName">First Name:</label>
-                            <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name" name="firstName"/><br/>
+                            <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name" name="firstName" required>
+                             <div class="valid-feedback">Valid.</div>
+                             <div class="invalid-feedback">Please Enter FirstName</div>
                         </div>
-                        <div class="bg-dark p-3">
+                        <div class="bg-dark p-3 was-validated">
                             <label for="LastName">Last Name:</label>
-                            <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name" name="lastName"/><br/>
+                            <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name" name="lastName" required>
+                             <div class="valid-feedback">Valid.</div>
+                             <div class="invalid-feedback">Please Enter LastName</div>
                         </div>
-                        <div class="bg-dark p-3">
+                        <div class="bg-dark p-3 was-validated">
                             <label for="Email">Email:</label>
-                            <input type="email" class="form-control" id="Email" placeholder="Enter email" name="email"/><br/>
+                            <input type="email" class="form-control" id="Email" placeholder="Enter email" name="email" required>
+                             <div class="valid-feedback">Valid.</div>
+                             <div class="invalid-feedback">Please Enter a valid Gmail</div>
                         </div>
+                        <div class="bg-dark p-3 was-validated">
+                          <input class="form-check-input" type="checkbox" id="myCheck"  name="remember" required>
+                              <label class="form-check-label" for="myCheck">I agree</label>             
+                        </div>
+                    <button type="button" onclick="submitForm()" id="submitButton" class="btn btn-primary">Submit</button>
+                        
                     </form>
                 </div>
 
                 <div class="modal-footer" >
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-             <button type="button" onclick="submitForm()" id="submitButton" class="btn btn-primary">Submit</button>
                     
                 </div>
             </div>
@@ -447,10 +458,21 @@
         }
 
         function submitForm() {
+            // Get form data
+            const firstName = $('#FirstName').val().trim();
+            const lastName = $('#LastName').val().trim();
+            const email = $('#Email').val().trim();
+
+            // Validate form fields
+            if (firstName === '' || lastName === '' || email === '') {
+                alert("Please fill out all required fields.");
+                return;
+            }
+
             const studentForm = {
-                firstName: $('#FirstName').val(),
-                lastName: $('#LastName').val(),
-                email: $('#Email').val()
+                firstName: firstName,
+                lastName: lastName,
+                email: email
             };
 
             if (editingId) {
